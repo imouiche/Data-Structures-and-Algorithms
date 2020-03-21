@@ -4,7 +4,7 @@ import com.codewithinoussa.Arrays.*;
 
 import java.util.*;
 
-public class Main {
+public class UsefulMethods {
     public static void main(String[] args){
         //useful methods
         String sentence = "trees are beautiful";

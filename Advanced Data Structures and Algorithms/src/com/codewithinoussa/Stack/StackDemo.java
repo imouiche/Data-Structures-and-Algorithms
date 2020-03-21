@@ -8,6 +8,8 @@ public class StackDemo {
     private int size;
 
     public StackDemo(int size){
+        if (size <= 0)
+            throw new IllegalArgumentException("size must be 1 or greater.");
         this.size = size;
         count = 0;
         items = new int[this.size];
@@ -25,6 +27,16 @@ public class StackDemo {
         return items[--count];
     }
 
+    public int peek(){
+        if (count == 0)
+            throw new IllegalStateException();
+        return items[count - 1];
+    }
+
+    public boolean isEmpty(){
+        return count == 0;
+    }
+
     public boolean isFull(){
         return items.length == count;
     }
@@ -35,6 +47,7 @@ public class StackDemo {
 
     @Override
     public String toString(){
-        return Arrays.toString(items);
+        var content = Arrays.copyOfRange(items, 0, count);
+        return Arrays.toString(content);
     }
 }
